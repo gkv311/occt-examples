@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description" content="{{site.description}}"/>
+  <meta name="author"      content="{{site.author}}"/>
+  <meta name="viewport"    content="width=device-width,initial-scale=1.0">
+  <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
+  <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet"    href="{{site.baseurl}}/css/bootstrap.min.css" />
+  <link rel="stylesheet"    href="{{site.baseurl}}/css/simple-sidebar.css" />
+  <link rel="stylesheet"    href="{{site.baseurl}}/css/style.min.css" />
+  <script type="text/javascript" src="{{site.baseurl}}/js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{site.baseurl}}/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="{{site.occt_wasm}}/xterm/xterm.css" />
+  <link rel="preload" href="{{site.occt_wasm}}/fonts/ubuntu_mono.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand"><a href="{{site.baseurl}}"><img src="{{site.baseurl}}/images/occt_draw_logo.png" alt="OCCT logo" /></a></li>
+      <li><b>Modeling</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'modeling-solids' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'modeling-bop' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'modeling-features' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+
+        </ul>
+      </li>
+      <li><b>Complex Modeling</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'modeling-complex' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+      </li>
+      <li><b>Visualization</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'visualization' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+      </li>
+      <li><b>Data Exchange</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'xde' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+<script>
+  // highlight currently opened page within navigation bar
+  // with the style ".sidebar-nav li a.active"
+  $(function(){
+    $('a').each(function(){
+      if ($(this).prop('href') == window.location.href) {
+        $(this).addClass('active'); $(this).parents('li').addClass('active');
+      }
+    });
+  });
+</script>
+
+  <div id="page-content-wrapper">
+
+{{ content }}
+
+  </div> <!-- page-content-wrapper -->
+
+  <div align="right" style="padding-right: 20px;"><p>Copyright © <a href="https://github.com/gkv311">Kirill Gavrilov</a>, 2021</p></div>
+</div> <!-- wrapper -->
+
+<!-- Custom JavaScript for the Menu Toggle -->
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+  });
+</script>
+
+</body>
+</html>

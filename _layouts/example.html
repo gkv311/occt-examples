@@ -1,0 +1,124 @@
+---
+layout: default
+toUseHighlightJs: 1
+---
+
+<header class="content-header">
+  <h1><a id="menu-toggle" href="#" class="btn btn-success"><i class="fa fa-reorder"></i></a>{{ page.title }}
+  </h1>
+</header>
+<div class="page-content inset">
+<link rel="stylesheet" href="{{site.baseurl}}/css/code-highlight-molokai.css" />
+
+<div style="float: right">
+<canvas id=occViewerCanvas oncontextmenu=event.preventDefault() tabindex=-1 style="border:0 none;background-color:#000" width="512" height="512"></canvas>
+</div>
+
+{{ content }}
+
+<br>
+<div id="occSrcSection">
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active" id="occTclSectionLabel">
+    <input type="radio" name="options" id="occTclSectionRadio" checked> Tcl
+  </label>
+  <label class="btn btn-primary" id="occCppSectionLabel">
+    <input type="radio" name="options" id="occCppSectionRadio"> C++
+  </label>
+</div>
+<div id="occTclSection" style="display: block">
+{% if layout.toUseHighlightJs == 1 %}
+<link rel="stylesheet" href="{{site.baseurl}}/highlight/default.min.css" />
+<script type="text/javascript" src="{{site.baseurl}}/highlight/highlight.min.js" charset="utf-8"></script>
+<pre><code id=occtTclSourceId class="language-tcl">{% include {{page.tclSource}} %}</code></pre>
+<script>
+hljs.highlightElement (document.getElementById ('occtTclSourceId'));
+//hljs.highlightAll();
+</script>
+{% else %}
+
+  {% if page.tclSource %}
+  {% capture tclSourceMarkdown %}
+```tcl
+{% include {{page.tclSource}} %}
+```
+  {% endcapture %}
+  {{ tclSourceMarkdown | markdownify }}
+{% endif %}
+
+{% endif %}
+</div>
+
+<div id="occCppSection" style="display: none">
+{% if page.cppSource %}
+{% capture cppSourceMarkdown %}
+```cpp
+{% include {{page.cppSource}} %}
+```
+{% endcapture %}
+{{ cppSourceMarkdown | markdownify }}
+{% endif %}
+</div>
+</div>
+<script>
+{% if page.cppSource %}
+  {% if page.tclSource %}
+    // Tcl + C++
+  {% else %}
+    // only C++
+    document.getElementById ("occTclSection").style.display = "none";
+    document.getElementById ("occTclSectionLabel").style.display = "none";
+    document.getElementById ("occCppSection").style.display = "block";
+  {% endif %}
+{% else %}
+  // only Tcl
+  document.getElementById ("occCppSection").style.display = "none";
+  document.getElementById ("occCppSectionLabel").style.display = "none";
+{% endif %}
+
+document.getElementById ("occTclSectionRadio").onchange = function()
+{
+  if (this.checked)
+  {
+    document.getElementById ("occCppSection").style.display = "none";
+    document.getElementById ("occTclSection").style.display = "block";
+  }
+}
+document.getElementById ("occCppSectionRadio").onchange = function()
+{
+  if (this.checked)
+  {
+    document.getElementById ("occTclSection").style.display = "none";
+    document.getElementById ("occCppSection").style.display = "block";
+  }
+}
+</script>
+
+
+<p style="font-family: Ubuntu Mono">&nbsp;</p>
+<!--<div id="termId" style="width: 860px; display: none"></div>-->
+<div id="termId" style="display: none"></div>
+
+<script id="occtSampleTclSourceId" type="text/plain">
+{% include {{page.tclSource}} %}
+</script>
+
+<script type="text/javascript" src="{{site.occt_wasm}}/xterm/xterm.js"    charset="utf-8"></script>
+<script type="text/javascript" src="{{site.occt_wasm}}/wasm32/DRAWEXE.js" charset="utf-8"></script>
+<script type="text/javascript" src="{{site.occt_wasm}}/js/drawxterm.js"   charset="utf-8"></script>
+<script>
+
+createDRAWEXE().then ((theModule) =>
+{
+  var occtSampleTclSource = document.getElementById ('occtSampleTclSourceId').innerHTML;
+  if (occtSampleTclSource !== "")
+  {
+    //DRAWEXE.eval (occtSampleTclSource);
+    DRAWEXE.terminalPasteScript (occtSampleTclSource);
+  }
+});
+
+</script>
+
+
+</div> <!-- page-content-inset -->

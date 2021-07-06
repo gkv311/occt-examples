@@ -1,9 +1,9 @@
 ---
 layout: example
-title: Visualization / WebGL2 Info
-categories: examples visualization
-permalink: /visualization-webgl2_info
-tclSource: /visualization/webgl2_info.tcl
+title: WebGL / WebGL2 Info
+categories: examples webgl
+permalink: /webgl-webgl2_info
+tclSource: /webgl/webgl2_info.tcl
 ---
 
 Sample prints information about OpenGL ES 3.0 (WebGL 2.0) context using V3d_View::DiagnosticInformation() method.

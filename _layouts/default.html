@@ -73,6 +73,21 @@
 {% endfor %}
         </ul>
       </li>
+      <li><b>WebGL</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'webgl' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+      </li>
+      <li><b>Documentation</b>
+        <ul>
+        <li><a href="https://dev.opencascade.org/doc/overview/html/">Overview</a></li>
+        <li><a href="https://dev.opencascade.org/doc/refman/html/">Reference manual</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 

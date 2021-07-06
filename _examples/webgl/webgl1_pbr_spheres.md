@@ -1,9 +1,9 @@
 ---
 layout: example
-title: Visualization / WebGL1 PBR Spheres
-categories: examples visualization
-permalink: /visualization-webgl1-pbr-spheres
-tclSource: /visualization/webgl1_pbr_spheres.tcl
+title: WebGL / WebGL1 PBR Spheres
+categories: examples webgl
+permalink: /webgl-webgl1-pbr-spheres
+tclSource: /webgl/webgl1_pbr_spheres.tcl
 ---
 
 Sample testing PBR metallic-roughness compatibility with obsolete WebGL 1.0 context (with extensions).

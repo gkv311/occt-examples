@@ -16,6 +16,9 @@ url: https://gkv311.github.io/occt-examples/
 
 #### Under the Hood Stuff #####
 
+plugins:
+  - jekyll-sitemap
+
 # Use rdiscount as the markdown engine because it generates html5 compliant code for stuff like footnotes
 # If you use maroku (default engine) some of your generated pages may not validate or lint as html5
 # If you don't have it install it via gem install rdiscount

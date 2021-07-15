@@ -82,6 +82,15 @@
 {% endfor %}
         </ul>
       </li>
+      <li><b>Terminal</b>
+        <ul>
+{% for exmpl in site.examples %}
+  {% if exmpl.categories contains 'terminal' %}
+        <li><a href="{{site.baseurl}}{{exmpl.url}}">{{exmpl.title}}</a></li>
+  {% endif %}
+{% endfor %}
+        </ul>
+      </li>
       <li><b>Documentation</b>
         <ul>
         <li><a href="https://dev.opencascade.org/doc/overview/html/">Overview</a></li>

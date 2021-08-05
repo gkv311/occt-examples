@@ -46,6 +46,6 @@ vlight -change 1 -intensity 0.1
 vrenderparams -shadingModel pbr
 
 # setup cubemap image
-jsupload /occt-examples/images/white_room_2k_cube.png
+jsupload images/white_room_2k_cube.png
 vbackground -cubemap white_room_2k_cube.png -invertedz
 vlight -change 1 -intensity 0.5

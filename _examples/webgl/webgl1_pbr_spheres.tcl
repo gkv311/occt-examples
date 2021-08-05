@@ -92,5 +92,5 @@ vcamera -ortho
 vfit
 
 # setup cubemap image
-#jsupload /occt-examples/images/white_room_2k_cube.png
+#jsupload images/white_room_2k_cube.png
 #vbackground -cubemap white_room_2k_cube.png -invertedz

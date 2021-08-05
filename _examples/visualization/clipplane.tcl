@@ -1,7 +1,7 @@
 pload XDE OCAF VISUALIZATION MODELING
 
 # read sample model
-jsupload /occt-examples/models/occ/as1-oc-214.stp
+jsupload models/occ/as1-oc-214.stp
 ReadStep D as1-oc-214.stp
 
 vinit View1
@@ -14,7 +14,7 @@ vfit
 vclipplane c -equation 0 1 0 -60 -set -capping 1 -useObjMaterial 0
 
 # use texture for capping
-jsupload /occt-examples/images/hatch_1.png
+jsupload images/hatch_1.png
 vclipplane c -texName hatch_1.png -texScale 0.05 -0.05
 
 

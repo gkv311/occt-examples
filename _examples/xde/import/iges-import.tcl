@@ -1,7 +1,7 @@
 pload XDE OCAF VISUALIZATION MODELING
 
 # read IGES file into XDE document using IGESCAFControl_Reader
-jsupload /occt-examples/models/occ/hammer.iges
+jsupload models/occ/hammer.iges
 ReadIges D hammer.iges
 
 # display the document in 3D viewer using XCAFPrs_AISObject

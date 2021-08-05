@@ -28,5 +28,5 @@ vrenderparams -shadingModel PBR
 vrenderparams -shadowMapBias 0.01
 
 # setup environment cubemap
-jsupload /occt-examples/images/kiara_2k_cube.jpg
+jsupload images/kiara_2k_cube.jpg
 vbackground -cubemap kiara_2k_cube.jpg

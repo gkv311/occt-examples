@@ -1,6 +1,6 @@
 pload MODELING VISUALIZATION
 
-jsupload /occt-examples/models/occ/Top.brep
+jsupload models/occ/Top.brep
 restore Top.brep s
 
 vinit View1

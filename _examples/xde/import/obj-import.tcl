@@ -2,10 +2,10 @@ pload XDE OCAF VISUALIZATION MODELING
 
 # read OBJ file into XDE document using RWObj_CafReader
 jsupload \
-  /occt-examples/models/HDU/HDU_lowRez_part1.obj \
-  /occt-examples/models/HDU/HDU_lowRez_part2.obj \
-  /occt-examples/models/HDU/HDU_lowRez_part1.mtl \
-  /occt-examples/models/HDU/HDU_lowRez_part2.mtl
+  models/HDU/HDU_lowRez_part1.obj \
+  models/HDU/HDU_lowRez_part2.obj \
+  models/HDU/HDU_lowRez_part1.mtl \
+  models/HDU/HDU_lowRez_part2.mtl
 
 ReadObj D HDU_lowRez_part1.obj -fileUnit m
 ReadObj D HDU_lowRez_part2.obj -fileUnit m -noCreateDoc
@@ -19,8 +19,8 @@ XGetAllVisMaterials D
 
 # upload texture images
 jsupload \
-  /occt-examples/models/HDU/HDU_01.jpg \
-  /occt-examples/models/HDU/HDU_02.jpg
+  models/HDU/HDU_01.jpg \
+  models/HDU/HDU_02.jpg
 
 # remove textures
 #XRemoveVisMaterial D lambert2SG

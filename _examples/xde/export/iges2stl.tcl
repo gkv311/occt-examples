@@ -1,7 +1,7 @@
 pload XDE OCAF VISUALIZATION MODELING
 
 # read IGES file into B-Rep shape using IGESControl_Reader
-jsupload /occt-examples/models/occ/hammer.iges
+jsupload models/occ/hammer.iges
 igesread hammer.iges i *
 
 # sew Faces into a single Shell

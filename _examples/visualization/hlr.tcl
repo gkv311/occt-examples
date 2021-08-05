@@ -1,7 +1,7 @@
 pload MODELING VISUALIZATION
 
 # load sample model
-jsupload /occt-examples/models/occ/Ball.brep
+jsupload models/occ/Ball.brep
 restore Ball.brep b
 
 # display sample model

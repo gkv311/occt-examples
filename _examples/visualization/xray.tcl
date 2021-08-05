@@ -1,7 +1,7 @@
 pload XDE VISUALIZATION
 
 # load and display STL file
-jsupload /occt-examples/models/skull/skull_w_jaw.stl
+jsupload models/skull/skull_w_jaw.stl
 readstl s skull_w_jaw.stl
 vinit View1
 vdisplay -dispMode 1 s

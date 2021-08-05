@@ -1,7 +1,7 @@
 pload XDE OCAF VISUALIZATION MODELING
 
 # read STEP file into XDE document using STEPCAFControl_Reader
-jsupload /occt-examples/models/occ/as1-oc-214.stp
+jsupload models/occ/as1-oc-214.stp
 ReadStep D as1-oc-214.stp
 
 # display the document in 3D viewer using XCAFPrs_AISObject

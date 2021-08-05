@@ -1,9 +1,9 @@
 pload MODELING VISUALIZATION
 
 puts "Importing shapes..."
-jsupload /occt-examples/models/occ/Top.brep \
-  /occt-examples/models/occ/Bottom.brep \
-  /occt-examples/images/hatch_1.png
+jsupload models/occ/Top.brep \
+  models/occ/Bottom.brep \
+  images/hatch_1.png
 
 set aHatch hatch_1.png
 restore Top.brep a

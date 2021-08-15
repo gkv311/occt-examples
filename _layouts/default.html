@@ -7,7 +7,6 @@
   <meta name="viewport"    content="width=device-width,initial-scale=1.0">
   <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
   <link rel="shortcut icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet"    href="{{site.baseurl}}/css/bootstrap.min.css" />
   <link rel="stylesheet"    href="{{site.baseurl}}/css/simple-sidebar.css" />
   <link rel="stylesheet"    href="{{site.baseurl}}/css/style.min.css" />
   <script type="text/javascript" src="{{site.baseurl}}/js/jquery.min.js"></script>
@@ -19,11 +18,19 @@
 
 <body>
 
+<div class="topnavbar">
+<header class="content-header">
+  <table style="width:100%"><tr>
+  <td><div class="sidebar-brand"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/occt_draw_logo.png" alt="OCCT logo"></a></div></td>
+  <td style="width:100%"><p>OCCT live Draw Harness examples</p></td>
+  </tr></table>
+</header>
+</div>
+
 <div id="wrapper">
 
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li class="sidebar-brand"><a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/images/occt_draw_logo.png" alt="OCCT logo" /></a></li>
       <li><b>Modeling</b>
         <ul>
 {% for exmpl in site.examples %}
@@ -103,13 +110,16 @@
 <script>
   // highlight currently opened page within navigation bar
   // with the style ".sidebar-nav li a.active"
-  $(function(){
-    $('a').each(function(){
-      if ($(this).prop('href') == window.location.href && window.location.pathname != "{{site.baseurl}}/") {
-        $(this).addClass('active'); $(this).parents('li').addClass('active');
-      }
-    });
-  });
+  let aSideBar = document.getElementById ("sidebar-wrapper")
+  let anItems = aSideBar.getElementsByTagName ("a");
+  for (let anElemIter = 0; anElemIter < anItems.length; ++anElemIter)
+  {
+    let anElem = anItems[anElemIter];
+    if (anElem.href == window.location.href && window.location.pathname != "/")
+    {
+      anElem.classList.add ("active");
+    }
+  }
 </script>
 
   <div id="page-content-wrapper">
@@ -120,14 +130,6 @@
 
   <div align="right" style="padding-right: 20px;"><p>Copyright © <a href="https://github.com/gkv311">Kirill Gavrilov</a>, 2021</p></div>
 </div> <!-- wrapper -->
-
-<!-- Custom JavaScript for the Menu Toggle -->
-<script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("active");
-  });
-</script>
 
 </body>
 </html>

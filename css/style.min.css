@@ -58,7 +58,7 @@ a.well:hover{text-decoration:none;opacity:0.8}
 .with-icon .pull-left{padding-right:30px}
 .with-icon .pull-right{padding-left:30px}
 dd{margin-left:20px}
-code{background-color: transparent; color:#494949;display:inline-block}
+code{background-color: transparent; color:#494949;display:inline}
 .table{margin:20px 0;border-radius:4px}
 .table > tbody > tr:nth-child(odd) > td{background-color:#232323}
 .table > tbody > tr:nth-child(odd) > th{background-color:#303030}

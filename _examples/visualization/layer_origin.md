@@ -7,6 +7,31 @@ tclSource: /visualization/layer_origin.tcl
 ---
 
 Script demonstrates usage of `Graphic3d_ZLayerSettings::Origin()` property to display presentations at large distance from world origin.
+
+<div style="margin-left: 35px">
+  <label>Distance (10^x)
+  <input type="range" min="1" max="10" value="7" class="slider" id="occDistRangeId" style="width: 200px">
+  </label>
+</div>
+<script>
+document.getElementById ("occDistRangeId").oninput = function()
+{
+  DRAWEXE.terminalPasteScript (
+    "set aDist [expr pow(10, " + this.value + ")]\n"
+  + "vzlayer $aLayer -origin $aDist 0 0 -noupdate\n"
+  + "vlocation t3 -location $aDist 0 0 -noupdate\n"
+  + "vlocation t2 -location $aDist 0 0 -noupdate\n"
+  + "vlocation b  -location $aDist 0 0 -noupdate\n"
+  + "vdrawtext t4 \"$aDist\" -pos [expr $aDist + 100] 0 -70 -height 30 -plane {*}$aPlane -halign center -color GREEN -noupdate\n"
+  + "\n"
+  + "reset t1\n"
+  + "ttranslate t1 $aDist 0 50\n"
+  + "vdisplay -dispMode 1 t1 -noupdate\n"
+  + "vfit\n"
+  );
+}
+</script>
+
 - First label "KO Premultiplied" is displayed with premultiplied large transformation.
   `TopLoc_Location` with large distance is set to `TopoDS_Shape` and displayed as `AIS_Shape` having identity local transformation.
   This leads to severe visual artifacts due to insufficient single floating point precision of vertex data uploaded onto GPU and calculations in GLSL program.

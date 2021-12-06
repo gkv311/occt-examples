@@ -1,9 +1,9 @@
 ---
 layout: example
-title: Visualization / Transparency [OIT]
+title: Visualization / Transparency 1 [OIT]
 categories: examples visualization
-permalink: /visualization-transparency
-tclSource: /visualization/transparency.tcl
+permalink: /visualization-transparency1
+tclSource: /visualization/transparency1.tcl
 ---
 
 Script displays order-independent transparency (OIT) managed by Graphic3d_RenderingParameters::TransparencyMethod parameter or V3d_View::ChangeRenderingParameters() property.

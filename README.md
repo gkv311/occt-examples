@@ -7,7 +7,7 @@ Open CASCADE Technology - live Draw Harness examples
 
 This is an experimental work-in-progress repository for a live DEMO of Draw Harness started within the browser.
 The DEMO itself could be found here:<br>
-https://gkv311.github.io/occt-examples/
+https://draw.sview.ru
 
 The project provides a set of interactive Draw Harness samples demonstrating usage and features of [Open CASCADE Technology](https://dev.opencascade.org) (or OCCT)
 without installation in the system and executed directly by the browser.

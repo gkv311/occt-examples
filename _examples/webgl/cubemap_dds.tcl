@@ -12,5 +12,5 @@ vfit
 vrenderparams -shadingModel pbr
 
 # setup environment cubemap texture
-jsupload images/cubemap_labels.dds
+jsupload {{site.baseurl}}/images/cubemap_labels.dds
 vbackground -cubemap cubemap_labels.dds -invertedz

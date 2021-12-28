@@ -1,7 +1,7 @@
 pload XDE OCAF VISUALIZATION MODELING
 
 # read STL file into single shape using RWStl_Reader
-jsupload models/skull/skull_w_jaw.stl
+jsupload {{site.baseurl}}/models/skull/skull_w_jaw.stl
 readstl s skull_w_jaw.stl
 trinfo s
 

@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / STL
 categories: examples xde import
-permalink: /xde-import-stl
+permalink: /xde-import-stl/
 tclSource: /xde/import/stl-import.tcl
 cppSource: /xde/import/stl-import.cpp
 ---

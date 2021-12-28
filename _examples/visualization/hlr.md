@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Hidden-line removal
 categories: examples visualization
-permalink: /visualization-hlr
+permalink: /visualization-hlr/
 tclSource: /visualization/hlr.tcl
 ---
 

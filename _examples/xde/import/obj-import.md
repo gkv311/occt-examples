@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / OBJ wavefront
 categories: examples xde import
-permalink: /xde-import-obj
+permalink: /xde-import-obj/
 tclSource: /xde/import/obj-import.tcl
 cppSource: /xde/import/obj-import.cpp
 ---

@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Export / IGES to STL
 categories: examples xde export
-permalink: /xde-export-iges2stl
+permalink: /xde-export-iges2stl/
 tclSource: /xde/export/iges2stl.tcl
 cppSource: /xde/export/iges2stl.cpp
 ---

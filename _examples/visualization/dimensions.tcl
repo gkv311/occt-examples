@@ -1,9 +1,9 @@
 pload MODELING VISUALIZATION
 
 puts "Importing shapes..."
-jsupload models/occ/Top.brep \
-  models/occ/Bottom.brep \
-  images/hatch_1.png
+jsupload {{site.baseurl}}/models/occ/Top.brep \
+  {{site.baseurl}}/models/occ/Bottom.brep \
+  {{site.baseurl}}/images/hatch_1.png
 
 set aHatch hatch_1.png
 restore Top.brep a

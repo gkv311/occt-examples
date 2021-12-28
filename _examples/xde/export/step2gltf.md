@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Export / STEP to glTF
 categories: examples xde export
-permalink: /xde-export-step2gltf
+permalink: /xde-export-step2gltf/
 tclSource: /xde/export/step2gltf.tcl
 cppSource: /xde/export/step2gltf.cpp
 ---

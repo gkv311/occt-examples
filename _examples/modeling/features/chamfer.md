@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Features / Chamfer
 categories: examples modeling-features
-permalink: /modeling-features-chamfer
+permalink: /modeling-features-chamfer/
 tclSource: /modeling/features/chamfer.tcl
 cppSource: /modeling/features/chamfer.cpp
 ---

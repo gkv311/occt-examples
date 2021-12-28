@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / PBR Spheres
 categories: examples visualization
-permalink: /visualization-pbr-spheres
+permalink: /visualization-pbr-spheres/
 tclSource: /visualization/pbr_spheres.tcl
 ---
 

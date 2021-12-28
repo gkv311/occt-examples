@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Propeller Animation
 categories: examples visualization
-permalink: /visualization-propeller
+permalink: /visualization-propeller/
 tclSource: /visualization/propeller.tcl
 ---
 

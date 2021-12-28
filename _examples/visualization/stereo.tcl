@@ -1,6 +1,6 @@
 pload MODELING VISUALIZATION
 
-jsupload models/occ/Top.brep
+jsupload {{site.baseurl}}/models/occ/Top.brep
 restore Top.brep s
 
 vinit View1

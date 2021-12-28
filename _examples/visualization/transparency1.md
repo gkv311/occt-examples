@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Transparency 1 [OIT]
 categories: examples visualization
-permalink: /visualization-transparency1
+permalink: /visualization-transparency1/
 tclSource: /visualization/transparency1.tcl
 ---
 

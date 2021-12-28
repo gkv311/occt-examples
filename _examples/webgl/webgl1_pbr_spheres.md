@@ -2,7 +2,7 @@
 layout: example
 title: WebGL / WebGL1 PBR Spheres
 categories: examples webgl
-permalink: /webgl-webgl1-pbr-spheres
+permalink: /webgl-webgl1-pbr-spheres/
 tclSource: /webgl/webgl1_pbr_spheres.tcl
 ---
 

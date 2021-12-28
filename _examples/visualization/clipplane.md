@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Clipping plane
 categories: examples visualization
-permalink: /visualization-clipplane
+permalink: /visualization-clipplane/
 tclSource: /visualization/clipplane.tcl
 ---
 

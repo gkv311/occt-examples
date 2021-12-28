@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / glTF 2.0
 categories: examples xde import
-permalink: /xde-import-gltf-helmet
+permalink: /xde-import-gltf-helmet/
 tclSource: /xde/import/gltf_helmet.tcl
 ---
 

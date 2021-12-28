@@ -1,10 +1,10 @@
 pload MODELING VISUALIZATION
 
 # load shapes
-jsupload models/occ/CrankArm.rle \
-  models/occ/CylinderHead.rle \
-  models/occ/Propeller.rle \
-  models/occ/EngineBlock.rle
+jsupload {{site.baseurl}}/models/occ/CrankArm.rle \
+  {{site.baseurl}}/models/occ/CylinderHead.rle \
+  {{site.baseurl}}/models/occ/Propeller.rle \
+  {{site.baseurl}}/models/occ/EngineBlock.rle
 
 restore CrankArm.rle     a
 restore CylinderHead.rle h

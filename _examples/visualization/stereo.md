@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Stereoscopy
 categories: examples visualization
-permalink: /visualization-stereo
+permalink: /visualization-stereo/
 tclSource: /visualization/stereo.tcl
 ---
 

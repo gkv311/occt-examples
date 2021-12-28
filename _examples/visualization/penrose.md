@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Penrose
 categories: examples visualization
-permalink: /visualization-penrose
+permalink: /visualization-penrose/
 tclSource: /visualization/penrose.tcl
 ---
 

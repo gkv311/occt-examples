@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Materials
 categories: examples visualization
-permalink: /visualization-materials
+permalink: /visualization-materials/
 tclSource: /visualization/materials.tcl
 ---
 

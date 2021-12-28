@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Anti-aliasing
 categories: examples visualization
-permalink: /visualization-anti-aliasing
+permalink: /visualization-anti-aliasing/
 tclSource: /visualization/antialiasing.tcl
 ---
 

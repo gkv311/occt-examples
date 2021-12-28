@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / X-Ray shader
 categories: examples visualization
-permalink: /visualization-xray
+permalink: /visualization-xray/
 tclSource: /visualization/xray.tcl
 ---
 

@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Solids / Primitives
 categories: examples modeling-solids
-permalink: /modeling-solids-primitives
+permalink: /modeling-solids-primitives/
 tclSource: /modeling/solids/primitives.tcl
 cppSource: /modeling/solids/primitives.cpp
 ---

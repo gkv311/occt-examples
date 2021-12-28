@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / STEP
 categories: examples xde import
-permalink: /xde-import-step
+permalink: /xde-import-step/
 tclSource: /xde/import/step-import.tcl
 cppSource: /xde/import/step-import.cpp
 ---

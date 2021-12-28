@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Features / Fillet
 categories: examples modeling-features
-permalink: /modeling-features-fillet
+permalink: /modeling-features-fillet/
 tclSource: /modeling/features/fillet.tcl
 cppSource: /modeling/features/fillet.cpp
 ---

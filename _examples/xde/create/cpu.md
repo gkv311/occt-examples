@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Create / CPU
 categories: examples xde
-permalink: /xde-create-cpu
+permalink: /xde-create-cpu/
 tclSource: /xde/create/cpu.tcl
 ---
 

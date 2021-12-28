@@ -2,7 +2,7 @@
 layout: example
 title: Complex Modeling / Bottle
 categories: examples modeling-complex
-permalink: /modeling-complex-bottle
+permalink: /modeling-complex-bottle/
 tclSource: /modeling/complex/bottle.tcl
 ---
 

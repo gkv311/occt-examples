@@ -1,5 +1,5 @@
 # load STL file
-jsupload models/skull/skull_w_jaw.stl
+jsupload {{site.baseurl}}/models/skull/skull_w_jaw.stl
 
 pload XDE MODELING VISUALIZATION
 vinit View1

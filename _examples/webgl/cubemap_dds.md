@@ -2,7 +2,7 @@
 layout: example
 title: WebGL / Cubemap DXT1
 categories: examples webgl
-permalink: /webgl-cubemap_dds
+permalink: /webgl-cubemap_dds/
 tclSource: /webgl/cubemap_dds.tcl
 ---
 

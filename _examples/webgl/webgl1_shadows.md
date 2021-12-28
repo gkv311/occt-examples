@@ -2,7 +2,7 @@
 layout: example
 title: WebGL / WebGL1 Shadows
 categories: examples webgl
-permalink: /webgl-webgl1_shadows
+permalink: /webgl-webgl1_shadows/
 tclSource: /webgl/webgl1_shadows.tcl
 ---
 

@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Boolean / Common
 categories: examples modeling-bop
-permalink: /modeling-bop-common
+permalink: /modeling-bop-common/
 tclSource: /modeling/bop/bop_common.tcl
 cppSource: /modeling/bop/bop_common.cpp
 ---

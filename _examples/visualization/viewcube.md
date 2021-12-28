@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / View Cube
 categories: examples visualization
-permalink: /visualization-viewcube
+permalink: /visualization-viewcube/
 tclSource: /visualization/viewcube.tcl
 ---
 

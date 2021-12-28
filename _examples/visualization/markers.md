@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Markers
 categories: examples visualization
-permalink: /visualization-markers
+permalink: /visualization-markers/
 tclSource: /visualization/markers.tcl
 ---
 

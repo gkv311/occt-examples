@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Boolean / Section
 categories: examples modeling-bop
-permalink: /modeling-bop-section
+permalink: /modeling-bop-section/
 tclSource: /modeling/bop/bop_section.tcl
 cppSource: /modeling/bop/bop_section.cpp
 ---

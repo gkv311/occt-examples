@@ -1,7 +1,7 @@
 pload MODELING OCAF XDE VISUALIZATION
 
 # read glTF model into XCAF document
-jsupload models/buggy/Buggy.glb
+jsupload {{site.baseurl}}/models/buggy/Buggy.glb
 ReadGltf D Buggy.glb
 
 # display XCAF document in shaded mode and exploded into parts

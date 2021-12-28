@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / IGES
 categories: examples xde import
-permalink: /xde-import-iges
+permalink: /xde-import-iges/
 tclSource: /xde/import/iges-import.tcl
 cppSource: /xde/import/iges-import.cpp
 ---

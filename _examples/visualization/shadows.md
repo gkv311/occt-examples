@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Shadows
 categories: examples visualization
-permalink: /visualization-shadows
+permalink: /visualization-shadows/
 tclSource: /visualization/shadows.tcl
 ---
 

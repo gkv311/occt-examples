@@ -2,7 +2,7 @@
 layout: example
 title: WebGL / WebGL1 Info
 categories: examples webgl
-permalink: /webgl-webgl1_info
+permalink: /webgl-webgl1_info/
 tclSource: /webgl/webgl1_info.tcl
 ---
 

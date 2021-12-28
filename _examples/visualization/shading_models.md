@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Shading Models
 categories: examples visualization
-permalink: /visualization-shading_models
+permalink: /visualization-shading_models/
 tclSource: /visualization/shading_models.tcl
 ---
 

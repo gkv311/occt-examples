@@ -2,7 +2,7 @@
 layout: example
 title: XDE / Import / glTF 1.0
 categories: examples xde import
-permalink: /xde-import-gltf-buggy
+permalink: /xde-import-gltf-buggy/
 tclSource: /xde/import/gltf_buggy.tcl
 ---
 

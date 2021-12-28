@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Layer origin
 categories: examples visualization
-permalink: /visualization-layer-origin
+permalink: /visualization-layer-origin/
 tclSource: /visualization/layer_origin.tcl
 ---
 

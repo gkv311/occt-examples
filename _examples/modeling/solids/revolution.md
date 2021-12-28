@@ -2,7 +2,7 @@
 layout: example
 title: Modeling / Solids / Revolution
 categories: examples modeling-solids
-permalink: /modeling-solids-revolution
+permalink: /modeling-solids-revolution/
 tclSource: /modeling/solids/revolution.tcl
 cppSource: /modeling/solids/revolution.cpp
 ---

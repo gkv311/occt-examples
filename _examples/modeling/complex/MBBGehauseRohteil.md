@@ -2,7 +2,7 @@
 layout: example
 title: Complex Modeling / MBB Rohteil
 categories: examples modeling-complex
-permalink: /modeling-complex-mbbgehauserohteil
+permalink: /modeling-complex-mbbgehauserohteil/
 tclSource: /modeling/complex/MBBGehauseRohteil.tcl
 ---
 

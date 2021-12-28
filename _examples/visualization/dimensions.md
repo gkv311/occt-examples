@@ -2,7 +2,7 @@
 layout: example
 title: Visualization / Dimensions
 categories: examples visualization
-permalink: /visualization-dimensions
+permalink: /visualization-dimensions/
 tclSource: /visualization/dimensions.tcl
 ---
 

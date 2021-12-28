@@ -2,7 +2,7 @@
 layout: example
 title: Complex Modeling / CAD
 categories: examples modeling-complex
-permalink: /modeling-complex-cad
+permalink: /modeling-complex-cad/
 tclSource: /modeling/complex/cad.tcl
 ---
 

@@ -126,6 +126,89 @@ class DrawTerm
   }
 
   /**
+   * Check if multithreading is allowed.
+   */
+  isAllowMultithreading()
+  {
+    return window.Worker !== undefined && window.Atomics !== undefined
+        && window.SharedArrayBuffer !== undefined;
+  }
+
+  /**
+   * Init Module and load WASM file.
+   */
+  async wasmLoad()
+  {
+    return new Promise (
+      async (theResolve, theReject) =>
+      {
+        try
+        {
+          let aLoaderModule = async () =>
+          {
+            let aLoaderPthreadModule = async () =>
+            {
+              this._myWasmBuild = "wasm32-pthread";
+              this.mainScriptUrlOrBlob = './DRAWEXE.js'; // for pthreads
+              let aModPath = this.locateFile ("DRAWEXE.js", "");
+              let aRet = await fetch (aModPath);
+              let aSrc = await aRet.text();
+              if (!aRet.ok)
+              {
+                throw new Error ("Fail to fetch DRAWEXE.js; response finished with " + aRet.status);
+              }
+              aSrc += '\nexport default createDRAWEXE';
+              const aBlob = new Blob ([aSrc], {type: 'text/javascript'});
+              let aModPThread = await import (URL.createObjectURL (aBlob));
+              return aModPThread;
+            }
+
+            let aLoaderFallbacktModule = async () =>
+            {
+              this._myWasmBuild = "wasm32";
+              let aModPath = this.locateFile ("DRAWEXE.js", "");
+              let aRet = await fetch (aModPath);
+              let aSrc = await aRet.text();
+              if (!aRet.ok)
+              {
+                throw new Error ("Fail to fetch DRAWEXE.js; response finished with " + aRet.status);
+              }
+              aSrc += '\nexport default createDRAWEXE';
+              const aBlob = new Blob ([aSrc], {type: 'text/javascript'});
+              let aMod32 = await import (URL.createObjectURL (aBlob));
+              return aMod32;
+            }
+
+            if (this.isAllowMultithreading())
+            {
+              try
+              {
+                return await aLoaderPthreadModule();
+              }
+              catch (theError)
+              {
+                this.terminalWriteError ("Unable to load multi-threaded DRAWEXE: " + theError);
+              }
+            }
+
+            return await aLoaderFallbacktModule();
+          };
+
+          let aMod = await aLoaderModule();
+          await aMod.default (this);
+
+          theResolve();
+        }
+        catch (theError)
+        {
+          this._myIsWasmLoaded = true;
+          this.terminalWriteError ("WebAssebly initialization has failed:\r\n" + theError);
+          theReject (theError);
+        }
+      });
+  }
+
+  /**
    * Terminal setup.
    */
   constructor()
@@ -146,6 +229,7 @@ class DrawTerm
 
     // prefix for DRAWEXE.data location
     this._myBasePrefix = "/";
+    this._myWasmBuild = "wasm32";
 
     // define WebGL canvas for WebAssembly viewer
     this.canvas = document.getElementById ('occViewerCanvas'); // canvas element for OpenGL context
@@ -201,6 +285,15 @@ class DrawTerm
   setBasePrefix (thePrefix)
   {
     this._myBasePrefix = thePrefix;
+  }
+
+  /**
+   * Set WASM build prefix for DRAWEXE.wasm location.
+   * @param[in] {string} theBuild new prefix to set
+   */
+  setWasmBuild (theBuild)
+  {
+    this._myWasmBuild = theBuild;
   }
 
   /**
@@ -349,6 +442,17 @@ class DrawTerm
       else if (theCmd.startsWith ("upload "))
       {
         return this._commandJsupload (theCmd.substring (7).trim());
+      }
+      else if (theCmd.startsWith ("jsasync "))
+      {
+        return new Promise ((theResolve, theReject) => {
+          this.evalAsyncCompleted = (theResult) => {
+            this.evalAsyncCompleted = undefined;
+            theResolve (theResult === 1);
+          };
+          this.evalAsyncCompleted = this.evalAsyncCompleted.bind (this);
+          this.evalAsync (theCmd.substring (8).trim());
+        });
       }
       else
       {
@@ -971,7 +1075,7 @@ class DrawTerm
             {
               theReject (new Error (aFailList));
             }
-	  });
+          });
       });
     }
     return Promise.all (aPromises);
@@ -1039,7 +1143,7 @@ class DrawTerm
     //console.warn(" @@ locateFile(" + thePath + ", " + thePrefix + ")");
     // thePrefix is JS file directory - override location of our DRAWEXE.data
     //return thePrefix + thePath;
-    return this._myBasePrefix + "wasm32/" + thePath;
+    return this._myBasePrefix + this._myWasmBuild + "/" + thePath;
   }
 
   /**
@@ -1072,6 +1176,10 @@ class DrawTerm
              + "\n\t\t:   fileUrl  URL on server or . to show open file dialog;"
              + "\n\t\t:   filePath file path within emulated file system to create.}"
              + " {JavaScript commands}");
+    this.eval ("help jsasync "
+             + "{jsasync command ..."
+             + "\n\t\t: Run Tcl command asynchronously.}"
+             + " {JavaScript commands}");
 
     this.terminalPrintInputLine ("");
   }
@@ -1090,16 +1198,17 @@ if (document.currentScript && document.currentScript.src.endsWith ("js/drawxterm
   _DRAWTERM_BASE_PREFIX = document.currentScript.src.substring (0, document.currentScript.src.length - "js/drawxterm.js".length)
 }
 
-let aCreateDrawexeOld = createDRAWEXE;
 createDRAWEXE = function()
 {
   DRAWEXE = new DrawTerm();
   DRAWEXE.setBasePrefix (_DRAWTERM_BASE_PREFIX);
-  var aDrawWasmLoader = aCreateDrawexeOld (DRAWEXE);
+  var aDrawWasmLoader = DRAWEXE.wasmLoad();
+  //DRAWEXE.setWasmBuild ("wasm32-pthread");
+  //var aDrawWasmLoader = createDRAWEXE (DRAWEXE);
   aDrawWasmLoader.catch ((theError) =>
   {
     DRAWEXE._myIsWasmLoaded = true;
-    DRAWEXE.terminalWriteError ("WebAssebly initialization has failed:\r\n" + theError);
+    DRAWEXE.terminalWriteError ("WebAssembly initialization has failed:\r\n" + theError);
   });
 
   document.fonts.ready.then ((theFontFaceSet) => {
@@ -1119,6 +1228,5 @@ createDRAWEXE = function()
   {
     //
   });
-
   return aDrawWasmLoader;
 };

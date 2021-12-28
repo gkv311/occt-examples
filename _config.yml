@@ -41,7 +41,7 @@ collections:
   examples:
 #    output: true
 
-include: [_examples]
+include: [_examples, '.htaccess']
 includes_dir: _examples
 
 # Exclude metadata and development time dependencies (like Grunt plugins)

@@ -1,0 +1,40 @@
+---
+layout: default
+title: Terminal / Draw Harness
+categories: examples terminal
+permalink: /terminal-draw/
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="page-content inset">
+<link rel="stylesheet" href="{{site.baseurl}}/css/code-highlight-molokai.css" />
+
+<div style="float: left; height: 100%; width: 100%">
+<div id="termId" style="float: left; width: 860px; display: none"></div>
+</div>
+
+<br><p style="font-family: Ubuntu Mono"><a href=".">Reset session</a></p>
+<div>
+  <p style="font-family: Ubuntu Mono">&nbsp;
+  <canvas id=occViewerCanvas oncontextmenu=event.preventDefault() tabindex=-1 style="border:0 none;background-color:#000" width="512" height="512"></canvas>
+  </p>
+</div>
+
+<script type="text/javascript" src="{{site.occt_wasm}}/xterm/xterm.js"    charset="utf-8"></script>
+<script type="text/javascript" src="{{site.occt_wasm}}/wasm32/DRAWEXE.js" charset="utf-8"></script>
+<script type="text/javascript" src="{{site.occt_wasm}}/js/drawxterm.js"   charset="utf-8"></script>
+<script>
+DRAWEXE.setPreferPthread (true);
+createDRAWEXE().then ((theModule) =>
+{
+  var occtSampleTclSource = "dversion";
+  if (occtSampleTclSource !== "")
+  {
+    //DRAWEXE.eval (occtSampleTclSource);
+    DRAWEXE.terminalPasteScript (occtSampleTclSource);
+  }
+});
+</script>
+
+</div> <!-- page-content-inset -->

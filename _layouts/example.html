@@ -105,7 +105,7 @@ document.getElementById ("occCppSectionRadio").onchange = function()
 <script type="text/javascript" src="{{site.occt_wasm}}/wasm32/DRAWEXE.js" charset="utf-8"></script>
 <script type="text/javascript" src="{{site.occt_wasm}}/js/drawxterm.js"   charset="utf-8"></script>
 <script>
-
+//DRAWEXE.setWasmBuildList (["wasm32"]);
 createDRAWEXE().then ((theModule) =>
 {
   var occtSampleTclSource = document.getElementById ('occtSampleTclSourceId').innerHTML;
